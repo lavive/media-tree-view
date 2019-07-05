@@ -1,0 +1,75 @@
+/* Remove default bullets */
+ul {
+    list-style-type: none;
+}
+
+/* Style the folder */
+.folder, .file, .folder-down {
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  border-left:1px solid rgb(100,100,100);
+}
+
+/* Create the folder picture */
+.folder::before {
+  position: relative;
+  top: 0.5px;
+  height: 1em;
+  width: 1em;
+  content: "";
+  color: black;
+  display: inline-block;
+  background: url(baseline-folder-24px.svg) no-repeat;
+  background-size: 100%;
+  margin-right: 6px;
+}
+
+/* Open folder when clicked on (using typescript) */
+.folder-down::before {
+  position: relative;
+  top: 0.5px;
+  height: 1em;
+  width: 1em;
+  content: "";
+  color: black;
+  display: inline-block;
+  background: url(baseline-folder_open-24px.svg) no-repeat;
+  background-size: 100%;
+  margin-right: 6px;
+}
+/* Create the line connection */
+span {
+  border-left:1px solid rgb(100,100,100);
+  border-bottom:1px solid rgb(100,100,100);
+  padding-left: 8px;
+}
+
+/* Create the file picture */
+.file::before {
+  position: relative;
+  top: 0.5px;
+  height: 1em;
+  width: 1em;
+  content: "";
+  color: black;
+  display: inline-block;
+  background: url(baseline-view_headline-24px.svg) no-repeat;
+  background-size: 100%;
+  margin-right: 6px;
+}
+
+/* Hide the nested list */
+.nested, .nested-last {
+  display: none;
+}
+
+/* Show the nested list with vertical line when the user clicks on the folder (with JavaScript) */
+.active {
+  display: block;
+  border-left:1px solid rgb(100,100,100);
+} 
+
+/* Show the nested list without vertical (last nested) line when the user clicks on the folder (with JavaScript) */
+.active-last{
+  display: block;
+}

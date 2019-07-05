@@ -1,0 +1,123 @@
+{
+  "head": [
+            {
+              "id": 1,
+              "name": "Folder1",
+              "isAFolder": true,
+              "files": [
+                         {
+                           "id": 2,
+                           "name": "File1-1",
+                           "isAFolder": false,
+                           "files":{}
+                         },
+                         {
+                           "id": 3,
+                           "name": "Folder1-1",
+                           "isAFolder": true,
+                           "files":{}
+                         },
+                         {
+                           "id": 4,
+                           "name": "Folder1-2",
+                           "isAFolder": true,
+                           "files": [
+                                      {
+                                        "id": 5,
+				        "name": "File1-2-1",
+				        "isAFolder": false,
+				        "files":{}
+				      }
+                                    ]
+                         },
+                         {
+                           "id": 6,
+                           "name": "File1-2",
+                           "isAFolder": false,
+                           "files":{}
+                         }
+                       ]
+             },
+             {
+               "id": 7,
+               "name": "Folder2",
+               "isAFolder": true,
+               "files": [
+                         {
+                           "id": 8,
+                           "name": "File2-1",
+                           "isAFolder": false,
+                           "files":{}
+                         },
+                         {
+                           "id": 9,
+                           "name": "Folder2-1",
+                           "isAFolder": true,
+                           "files":{}
+                         },
+                         {
+                           "id": 10,
+                           "name": "Folder2-2",
+                           "isAFolder": true,
+                           "files": [
+                                      {
+                                        "id": 11,
+				        "name": "File2-2-1",
+				        "isAFolder": false,
+				        "files":{}
+				      },
+                                      {
+                                        "id": 12,
+				        "name": "File2-2-2",
+				        "isAFolder": false,
+				        "files":{}
+				      }
+                                    ]
+                         }
+                       ]
+             },
+             {
+               "id": 13,
+               "name": "Folder3",
+               "isAFolder": true,
+               "files": [
+                         {
+                           "id": 14,
+                           "name": "File3-1",
+                           "isAFolder": false,
+                           "files":{}
+                         },
+                         {
+                           "id": 15,
+                           "name": "File3-2",
+                           "isAFolder": false,
+                           "files":{}
+                         },
+                         {
+                           "id": 16,
+                           "name": "File3-3",
+                           "isAFolder": false,
+                           "files":{}
+                         }
+                       ]
+             },
+             {
+                           "id": 17,
+                           "name": "File4-1",
+                           "isAFolder": false,
+                           "files":{}
+                         },
+                         {
+                           "id": 18,
+                           "name": "File5-2",
+                           "isAFolder": false,
+                           "files":{}
+                         },
+                         {
+                           "id": 19,
+                           "name": "File6-3",
+                           "isAFolder": false,
+                           "files":{}
+                         }
+        ]
+}

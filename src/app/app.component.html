@@ -1,0 +1,5 @@
+<button *ngIf="!isAllCollapsed()" [disabled]="!isAuth()" (click)="onCollapse()">Tout déplier</button>
+<button *ngIf="!isAllTuck()" [disabled]="!isAuth()" (click)="onUnCollapse()">Tout replier</button>
+<app-tree-view [headFiles]="getHeadFiles()"></app-tree-view>
+
+<router-outlet></router-outlet>

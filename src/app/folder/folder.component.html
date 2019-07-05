@@ -1,0 +1,12 @@
+<li> 
+    <span *ngIf="isFolder()" [ngClass]="{'folder':!isClicked() && !isLeaf(),'folder-down':isClicked() || isLeaf()}"
+                             (click)="onActiveFolder($event)">{{ getName() }}</span> 
+    <span *ngIf="!isFolder()" class="file">{{ getName() }}</span> 
+    <!--<span *ngIf="isFolder()" class="folder">{{ folderName }}</span>-->
+    <ul *ngIf="isFolder()" [ngClass]="{'nested': !isClicked() && !isLast(),
+                                       'active': isClicked() && !isLast(),
+                                       'nested-last': !isClicked() && isLast(),
+                                       'active-last': isClicked() && isLast()}">
+      <app-folder *ngFor="let file of getChilds()" [folderNode]="file"></app-folder>
+    </ul>
+</li>
