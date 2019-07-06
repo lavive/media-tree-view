@@ -24,7 +24,7 @@ export class FolderComponent implements OnInit {
   getChilds() { return this.folderNode.childs(); }
   isClicked() { return this.folderNode.isClicked(); }
   isLast() { return this.last; } /* it's a folder and it is the last child (class css is different)*/
-  isLeaf() { return this.folderNode.childs().length === 0; } /* no child */
+  isLeaf() { return this.folderNode.isLeaf(); } /* no child */
 
   /* call when mouse click */
   onActiveFolder(event: Event) {

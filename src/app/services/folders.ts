@@ -11,7 +11,7 @@ export class Folders {
   static isAllCollapsed(): boolean {
     for (const file of Folders.getFiles()) {
       if (file.isAFolder()) {
-        if (!file.isClicked()) {
+        if (!file.isClicked() && !file.isLeaf()) {
           return false;
         }
       }
@@ -23,7 +23,7 @@ export class Folders {
   static isAllTuck(): boolean {
     for (const file of Folders.getFiles()) {
       if (file.isAFolder()) {
-        if (file.isClicked()) {
+        if (file.isClicked() && !file.isLeaf()) {
           return false;
         }
       }

@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/*import { Folders } from './tree-view/folders';
-import { File } from './tree-view/file';
-import { Id_Files } from './tree-view/id_files';
-import { Id_File } from './tree-view/id_files';*/
 import { FoldersService } from './services/folders.service';
 
 @Component({

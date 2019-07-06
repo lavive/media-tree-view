@@ -59,5 +59,6 @@ export class File {
   setLast(isALast: boolean) { this.last = isALast; }
   isClicked(): boolean { return this.clicked; }
   setClicked(isClick: boolean) {this.clicked = isClick; }
+  isLeaf() { return this.childs().length === 0; } /* no child */
 
 }
