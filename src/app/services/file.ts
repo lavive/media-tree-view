@@ -9,7 +9,7 @@ export class File {
   private last: boolean; /* true if it is the last child */
   private clicked: boolean; /* true if collapsed */
 
-  /* how to sort two file */
+  /* how to sort two files */
   private static sortFiles(file1: File, file2: File): number {
     if (file1.isAFolder() && !file2.isAFolder()) {
       return -1;

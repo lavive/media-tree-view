@@ -35,7 +35,7 @@ export class IdFiles {
     }
   }
 
-  get(id: number): File {
+  getFile(id: number): File {
     for (const idfile of this.idfiles) {
       if (idfile.getId() === id) {
         return idfile.getFile();

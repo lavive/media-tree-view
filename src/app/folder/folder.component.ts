@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { BuildFoldersComponent } from '../build-folders/build-folders.component';
 
 @Component({
   selector: 'app-folder',
@@ -11,7 +14,7 @@ export class FolderComponent implements OnInit {
   @Input() folderNode: any;
   private last: boolean;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -31,6 +34,12 @@ export class FolderComponent implements OnInit {
     if (!this.isLeaf()) {
       this.folderNode.setClicked(!this.folderNode.isClicked());
     }
+  }
+
+  /* call when mouse click */
+  onShowFolder(event: Event) {
+    BuildFoldersComponent.get().getFolderService();
+    this.router.navigate(['single-folder/5']);
   }
 
 }

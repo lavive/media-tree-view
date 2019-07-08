@@ -1,3 +1,5 @@
+<button *ngIf="!isAllCollapsed()" (click)="onCollapse()">Tout déplier</button>
+<button *ngIf="!isAllTuck()" (click)="onUnCollapse()">Tout replier</button>
 <ul id="myUl">
   <app-folder *ngFor="let headFile of getHeadFiles()" [folderNode]="headFile"></app-folder>
 </ul>
