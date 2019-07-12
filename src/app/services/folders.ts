@@ -51,4 +51,13 @@ export class Folders {
 
     return tmpFiles;
   }
+
+  static getFileById(id: number): File {
+    const file = Folders.getFiles().find(
+      (f) => {
+        return f.getId() === id;
+      }
+    );
+    return file;
+  }
 }

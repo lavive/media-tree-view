@@ -16,7 +16,6 @@ export class SingleFolderComponent implements OnInit {
 
   ngOnInit() {
     const id: number = +this.route.snapshot.params['id'];
-    console.log('id:' + id);
     this.name = BuildFoldersComponent.get().getFolderService().getFile(id).getName();
   }
 

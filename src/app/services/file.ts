@@ -2,6 +2,7 @@ import { Folders } from './folders';
 
 /* depict a data which can be a folder or a file */
 export class File {
+  private id: number;
   private name: string;
   private files: File[] = new Array(); /* list of folder childs */
   private isFolder: boolean; /* folder or a file */
@@ -23,7 +24,8 @@ export class File {
     return 0;
   }
 
-  constructor(theName: string, isAFolder: boolean) {
+  constructor(theId: number, theName: string, isAFolder: boolean) {
+    this.id = theId;
     this.name = theName;
     this.isFolder = isAFolder;
     this.head = true;
@@ -51,6 +53,7 @@ export class File {
   }
 
   /* getters */
+  getId(): number { return this.id; }
   isAFolder(): boolean { return this.isFolder; }
   getName(): string { return this.name; }
   childs(): File[] { return this.files; }

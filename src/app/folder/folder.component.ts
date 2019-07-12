@@ -39,7 +39,7 @@ export class FolderComponent implements OnInit {
   /* call when mouse click */
   onShowFolder(event: Event) {
     BuildFoldersComponent.get().getFolderService();
-    this.router.navigate(['single-folder/5']);
+    this.router.navigate(['single-folder/' + this.folderNode.getId()]);
   }
 
 }

@@ -7,28 +7,33 @@ import data from './folders.json';
 /* service treating files and folders */
 export class FoldersService {
 
-    private filesId: IdFiles = new IdFiles();
+    /*private filesId: IdFiles = new IdFiles();*/
 
     /* build the folders tree from json file */
     buildFolders() {
         const allFiles = (<any>data).head;
-        const idFiles: IdFiles = new IdFiles();
+        /*const idFiles: IdFiles = new IdFiles();*/
+        const idFiles: File[] = new Array();
         while (allFiles.length > 0) {
             const file = allFiles.pop();
             let fileNode: File = null;
-            if (idFiles.getFile(file.id) != null) {
-                fileNode = idFiles.getFile(file.id);
+            /*if (idFiles.getFile(file.id) != null) {*/
+            const fileTmp: File = idFiles.filter((f) => f.getId() === file.id).pop();
+            if (fileTmp != null) {
+                /*fileNode = idFiles.getFile(file.id);*/
+                fileNode = fileTmp;
             } else {
-                fileNode = new File(file.name, file.isAFolder);
+                fileNode = new File(file.id, file.name, file.isAFolder);
             }
             for (const child of file.files) {
-                const fileNodeChild: File = new File(child.name, child.isAFolder);
+                const fileNodeChild: File = new File(child.id, child.name, child.isAFolder);
                 if (child.isAFolder) {
                     allFiles.push(child);
-                    idFiles.add(new IdFile(child.id, fileNodeChild));
+                    /*idFiles.add(new IdFile(child.id, fileNodeChild));*/
+                    idFiles.push(fileNodeChild);
                 }
                 fileNode.addFile(fileNodeChild);
-                this.filesId.add(new IdFile(child.id, fileNodeChild));
+                /*this.filesId.add(new IdFile(child.id, fileNodeChild));*/
             }
         }
         for (const file of Folders.getFiles()) {
@@ -67,7 +72,8 @@ export class FoldersService {
 
     /* get files with id */
     getFile(id: number): File {
-        return this.filesId.getFile(id);
+        /*return this.filesId.getFile(id);*/
+        return Folders.getFileById(id);
     }
 
 }
